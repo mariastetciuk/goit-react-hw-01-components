@@ -17,7 +17,6 @@ export default function TransactionHistory({ transactions }) {
         {transactions.map(item => (
           <TransactionItem
             key={item.id}
-            id={item.id}
             type={item.type}
             amount={item.amount}
             currency={item.currency}
@@ -28,5 +27,12 @@ export default function TransactionHistory({ transactions }) {
   );
 }
 TransactionHistory.propTypes = {
-  transactions: PropTypes.array.isRequired,
+  transactions: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ),
 };

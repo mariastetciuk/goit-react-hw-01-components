@@ -14,6 +14,6 @@ export default function StatListProfile({ stats }) {
   return itemsStats;
 }
 
-StatListProfile.prototype = {
-  stats: PropTypes.object.isRequired,
+StatListProfile.protoTypes = {
+  stats: PropTypes.objectOf(PropTypes.number).isRequired,
 };

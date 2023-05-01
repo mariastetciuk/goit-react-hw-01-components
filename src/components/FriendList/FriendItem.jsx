@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import css from './FriendList.module.css';
 import clsx from 'clsx';
-export default function FriendItem({ name, avatar, isOnline, id }) {
+export default function FriendItem({ name, avatar, isOnline }) {
   return (
-    <li className={css.item} key={id}>
+    <li className={css.item}>
       <span
         className={clsx(css.status, isOnline ? css.isOnline : css.isOfline)}
       >
@@ -16,7 +16,6 @@ export default function FriendItem({ name, avatar, isOnline, id }) {
 }
 
 FriendItem.propTypes = {
-  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
   isOnline: PropTypes.bool.isRequired,
