@@ -26,6 +26,7 @@ export default function TransactionHistory({ transactions }) {
     </table>
   );
 }
+
 TransactionHistory.propTypes = {
   transactions: PropTypes.arrayOf(
     PropTypes.exact({
